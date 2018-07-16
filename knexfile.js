@@ -9,7 +9,7 @@ module.exports = {
 
   production: {
     client: 'pg',
-    connection: 'postgres:///bestboard'
+    connection: process.env.DATABASE_URL
   }
 
 };
