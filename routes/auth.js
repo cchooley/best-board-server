@@ -24,22 +24,13 @@ router.post('/login', function(req, res, next) {
         })
 })
 
-router.post('/signup', function (req, res, next) {
-    res.json({ res })
-
-    /*
+router.post('/register', function (req, res, next) {
     queries.create(req.body)
-        .then(queries.getUserByEmail(req.body.email))
         .then(user => {
-            const passwordMatch = authUtils.comparePassword(req.body.password, user.password)
-            if (passwordMatch) {
                 const token = authUtils.createJWT(user)
-                res.json({ token });
-            } else {
-                res.json({ error: 'That did not work' })
+                res.json({ token })
             }
-        })
-        */
-});
+        )
+})
 
 module.exports = router;

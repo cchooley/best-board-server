@@ -1,4 +1,5 @@
-const database = require("./database-connection");
+const database = require('./database-connection')
+const authUtils = require('./utils/auth')
 
 module.exports = {
     list() {
