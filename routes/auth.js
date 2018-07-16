@@ -29,4 +29,22 @@ router.post('/login', function(req, res, next) {
         })
 })
 
+router.post('/register', function (req, res, next) {
+    console.log(req.body)
+    queries.create(req.body)
+        .then(queries.getUserByEmail(req.body.email))
+        .then(user => {
+            console.log(user)
+            const passwordMatch = authUtils.comparePassword(req.body.password, user.password)
+            // If student exists, check password
+            if (passwordMatch) {
+                const token = authUtils.createJWT(user)
+                res.json({ token });
+            } else {
+                res.json({ error: 'Incorrect password' })
+            }
+        })
+    }
+);
+
 module.exports = router;
