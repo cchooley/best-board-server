@@ -1,3 +1,5 @@
+const authUtils = require('../utils/auth')
+
 exports.seed = function (knex, Promise) {
   return knex("user").del().then(() => {
     return knex("user").insert([{
@@ -6,14 +8,14 @@ exports.seed = function (knex, Promise) {
       email: 'cchooley@gmail.com',
       organization: 'Vintage Theatre',
       role: 'Board Member',
-      password: 'password'
+      password: authUtils.hashPassword('password')
     }, {
       id: 2,
       name: 'Deb Persoff',
       email: 'mpersoff@aol.com',
       organization: 'Vintage Theatre',
       role: 'President',
-      password: 'theater'
+      password: authUtils.hashPassword('theater')
     }]);
   }).then(() => {
     return knex.raw("ALTER SEQUENCE user_id_seq RESTART WITH 3;");
