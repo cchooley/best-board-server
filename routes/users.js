@@ -1,9 +1,48 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+const queries = require('../queries');
+
+router.get("/", (request, response, next) => {
+  queries.list()
+    .then(users => {
+      response.json({ users });
+    })
+    .catch(next);
+});
+
+router.get("/:id", (request, response, next) => {
+  queries.read(request.params.id)
+    .then(user => {
+      user
+        ? response.json({ user })
+        : response.status(404).json({ user: 'Not found' })
+    })
+    .catch(next);
+});
+
+router.post("/", (request, response, next) => {
+  queries.create(request.body)
+    .then(user => {
+      response.status(201).json({ user });
+    })
+    .catch(next);
+});
+
+router.delete("/:id", (request, response, next) => {
+  queries.delete(request.params.id)
+    .then(() => {
+      response.status(204).json({ deleted: true });
+    })
+    .catch(next);
+});
+
+router.put("/:id", (request, response, next) => {
+  queries.update(request.params.id, request.body)
+    .then(user => {
+      response.json({ user });
+    })
+    .catch(next);
 });
 
 module.exports = router;
