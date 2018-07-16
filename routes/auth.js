@@ -36,15 +36,13 @@ router.post('/register', function (req, res, next) {
         .then(user => {
             console.log(user)
             const passwordMatch = authUtils.comparePassword(req.body.password, user.password)
-            // If student exists, check password
             if (passwordMatch) {
                 const token = authUtils.createJWT(user)
                 res.json({ token });
             } else {
-                res.json({ error: 'Incorrect password' })
+                res.json({ error: 'That did not work' })
             }
         })
-    }
-);
+});
 
 module.exports = router;

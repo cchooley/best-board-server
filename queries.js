@@ -11,6 +11,7 @@ module.exports = {
         return database('user').select().where('email', email).first()
     },
     create(user) {
+        user.password = authUtils.hashPassword(user.password)
         return database('user').insert(user).returning('*').then(record => record[0])
     },
     update(id, user) {
