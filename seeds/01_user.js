@@ -5,6 +5,7 @@ exports.seed = function (knex, Promise) {
     return knex("user").insert([{
       id: 1,
       name: 'Conor Hooley',
+      image: 'https://tinyurl.com/ycc9cak8',
       email: 'cchooley@gmail.com',
       organization: 'Vintage Theatre',
       role: 'Board Member',
