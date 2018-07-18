@@ -10,15 +10,15 @@ exports.seed = function (knex, Promise) {
       organization: 'Vintage Theatre',
       role: 'Board Member',
       password: authUtils.hashPassword('password')
+    },
+    {
+      id: 2,
+      name: 'Deb Persoff',
+      email: 'mpersoff@aol.com',
+      organization: 'Vintage Theatre',
+      role: 'President',
+      password: authUtils.hashPassword('theater')
     }
-    // {
-    //   id: 2,
-    //   name: 'Deb Persoff',
-    //   email: 'mpersoff@aol.com',
-    //   organization: 'Vintage Theatre',
-    //   role: 'President',
-    //   password: authUtils.hashPassword('theater')
-    // }
   ]);
   }).then(() => {
     return knex.raw("ALTER SEQUENCE user_id_seq RESTART WITH 3;");
