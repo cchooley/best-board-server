@@ -16,7 +16,8 @@ exports.seed = function (knex, Promise) {
       votedYes: [],
       noVote: 0,
       votedNo: [],
-      abVote: 0
+      abVote: 0,
+      votedAb: []
     }]);
   }).then(() => {
     return knex.raw("ALTER SEQUENCE vote_id_seq RESTART WITH 2;");
