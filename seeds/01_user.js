@@ -9,7 +9,11 @@ exports.seed = function (knex, Promise) {
       email: 'cchooley@gmail.com',
       organization: 'Vintage Theatre',
       role: 'Board Member',
-      password: authUtils.hashPassword('password')
+      password: authUtils.hashPassword('password'),
+      memberSince: 2014,
+      termExpires: 2020,
+      committees: [],
+      voteHistory: []
     },
     {
       id: 2,
@@ -17,7 +21,11 @@ exports.seed = function (knex, Promise) {
       email: 'mpersoff@aol.com',
       organization: 'Vintage Theatre',
       role: 'President',
-      password: authUtils.hashPassword('theater')
+      password: authUtils.hashPassword('theater'),
+      memberSince: 2012,
+      termExpires: 2020,
+      committees: [],
+      voteHistory: []
     }
   ]);
   }).then(() => {

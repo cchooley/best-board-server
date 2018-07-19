@@ -6,7 +6,11 @@ exports.up = function (knex, Promise) {
         table.text('email'),
         table.text('organization'),
         table.text('role'),
-        table.text('password')
+        table.text('password'),
+        table.integer('memberSince'),
+        table.integer('termExpires'),
+        table.string('committees'),
+        table.string('voteHistory')
     });
 };
 
