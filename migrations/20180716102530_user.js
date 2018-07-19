@@ -9,8 +9,8 @@ exports.up = function (knex, Promise) {
         table.text('password'),
         table.integer('memberSince'),
         table.integer('termExpires'),
-        table.string('committees'),
-        table.string('voteHistory')
+        table.text('committees'),
+        table.text('voteHistory')
     });
 };
 

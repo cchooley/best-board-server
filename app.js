@@ -6,6 +6,7 @@ const morgan = require("morgan");
 const app = express();
 
 const auth = require('./routes/auth')
+const votes = require('./routes/votes')
 const users = require('./routes/users')
 
 app.use(morgan('dev'));
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 })
 
 app.use('/users', users)
+app.use('/votes', votes)
 app.use('/auth', auth)
 
 // catch 404 and forward to error handler
