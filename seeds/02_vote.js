@@ -13,8 +13,9 @@ exports.seed = function (knex, Promise) {
       option2: "No",
       option3: "Abstain",
       yesVote: 0,
-      votedYes: null,
+      votedYes: [],
       noVote: 0,
+      votedNo: [],
       abVote: 0
     }]);
   }).then(() => {
