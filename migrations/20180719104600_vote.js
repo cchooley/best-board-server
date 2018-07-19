@@ -12,8 +12,9 @@ exports.up = function (knex, Promise) {
         table.integer('yesVote'),
         table.specificType('votedYes', 'text[]'),
         table.integer('noVote'),
-        table.text('votedNo')
-        table.integer('abVote')
+        table.specificType('votedNo', 'text[]'),
+        table.integer('abVote'),
+        table.specificType('votedAb', 'text[]')
     });
 };
 
