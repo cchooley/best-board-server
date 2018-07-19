@@ -5,6 +5,7 @@ exports.up = function (knex, Promise) {
         table.date('openedOn')
         table.date('closedOn'),
         table.text('createdBy'),
+        table.text('issue'),
         table.text('option1'),
         table.text('option2'),
         table.text('option3'),

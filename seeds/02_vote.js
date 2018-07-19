@@ -8,6 +8,7 @@ exports.seed = function (knex, Promise) {
       openedOn: new Date(),
       closedOn: null,
       createdBy: 'Conor Hooley',
+      issue: 'Should Vintage Theatre purchase its current building from the city of Aurora?',
       option1: "Yes",
       option2: "No",
       option3: "Abstain",
