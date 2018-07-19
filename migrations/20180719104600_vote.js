@@ -10,7 +10,7 @@ exports.up = function (knex, Promise) {
         table.text('option2'),
         table.text('option3'),
         table.integer('yesVote'),
-        table.text('votedYes'),
+        table.specificType('votedYes', 'text[]'),
         table.integer('noVote'),
         table.text('votedNo')
         table.integer('abVote')
