@@ -21,6 +21,14 @@ router.get("/:id", (request, response, next) => {
         .catch(next);
 });
 
+// router.get('/:id/users', (request, response, next) => {
+//     queries.readVotes(request.params.id).then(votes => {
+//         votes
+//             ? response.json({ votes })
+//             : response.status(404).json({ message: 'Not Found' })
+//     }).catch(next)
+// })
+
 router.post("/", (request, response, next) => {
     queries.create(request.body)
         .then(vote => {

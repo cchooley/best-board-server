@@ -7,6 +7,10 @@ module.exports = {
     read(id) {
         return database('vote').select().where('id', id).first()
     },
+        readVotes(id) {
+        return database('user').innerJoin('vote', 'user.id', 'vote1')
+        .where('user.id', id)
+    },
     create(vote) {
         return database('vote').insert(vote).returning('*').then(record => record[0])
     },

@@ -8,12 +8,27 @@ exports.up = function (knex, Promise) {
         table.text('option1'),
         table.text('option2'),
         table.text('option3'),
-        table.text('vote1'),
-        table.text('vote2'),
-        table.text('vote3')
+        table.integer('vote1'),
+        table.integer('vote2'),
+        table.integer('vote3')
     });
 };
 
 exports.down = function (knex, Promise) {
     return knex.schema.dropTable('vote')
 };
+
+/*         table.integer('vote1')
+            .references('id')
+            .inTable('user')
+            .index(),
+        table.integer('vote2')
+            .references('id')
+            .inTable('user')
+            .index(),
+        table.integer('vote3')
+            .references('id')
+            .inTable('user')
+            .index()
+
+ */

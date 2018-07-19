@@ -11,9 +11,9 @@ exports.seed = function (knex, Promise) {
       option1: "Yes",
       option2: "No",
       option3: "Abstain",
-      vote1: [],
-      vote2: [],
-      vote3: []
+      vote1: 1,
+      vote2: null,
+      vote3: null
     }]);
   }).then(() => {
     return knex.raw("ALTER SEQUENCE vote_id_seq RESTART WITH 2;");
