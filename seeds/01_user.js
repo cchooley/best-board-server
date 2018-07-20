@@ -8,10 +8,10 @@ exports.seed = function (knex, Promise) {
       image: 'https://tinyurl.com/ycc9cak8',
       email: 'cchooley@gmail.com',
       organization: 'Vintage Theatre',
-      role: 'Board Member',
+      role: 'Admin',
       password: authUtils.hashPassword('password'),
       memberSince: 2014,
-      termExpires: 2020,
+      termExpires: 2019,
       committees: [],
       voteHistory: []
     },
@@ -20,15 +20,27 @@ exports.seed = function (knex, Promise) {
       name: 'Deb Persoff',
       email: 'mpersoff@aol.com',
       organization: 'Vintage Theatre',
-      role: 'President',
+      role: 'Executive Board',
       password: authUtils.hashPassword('theater'),
-      memberSince: 2012,
+      memberSince: 2015,
+      termExpires: 2020,
+      committees: [],
+      voteHistory: []
+    },
+    {
+      id: 3,
+      name: 'Stasia Vinnedge',
+      email: 'sscs@icloud.com',
+      organization: 'Vintage Theatre',
+      role: 'Board Member',
+      password: authUtils.hashPassword('stasia'),
+      memberSince: 2015,
       termExpires: 2020,
       committees: [],
       voteHistory: []
     }
   ]);
   }).then(() => {
-    return knex.raw("ALTER SEQUENCE user_id_seq RESTART WITH 3;");
+    return knex.raw("ALTER SEQUENCE user_id_seq RESTART WITH 4;");
   });
 };
