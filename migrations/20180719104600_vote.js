@@ -21,18 +21,3 @@ exports.up = function (knex, Promise) {
 exports.down = function (knex, Promise) {
     return knex.schema.dropTable('vote')
 };
-
-/*         table.integer('vote1')
-            .references('id')
-            .inTable('user')
-            .index(),
-        table.integer('vote2')
-            .references('id')
-            .inTable('user')
-            .index(),
-        table.integer('vote3')
-            .references('id')
-            .inTable('user')
-            .index()
-
- */

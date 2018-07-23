@@ -9,7 +9,7 @@ exports.up = function (knex, Promise) {
         table.text('password'),
         table.integer('memberSince'),
         table.integer('termExpires'),
-        table.text('committees'),
+        table.specificType('committees', 'text[]'),
         table.text('voteHistory')
     });
 };
