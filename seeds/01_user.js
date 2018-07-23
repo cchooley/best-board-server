@@ -12,8 +12,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('password'),
       memberSince: 2014,
       termExpires: 2019,
-      committees: [],
-      voteHistory: []
+      committees: []
     },
     {
       id: 2,
@@ -24,8 +23,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('theater'),
       memberSince: 2015,
       termExpires: 2020,
-      committees: [],
-      voteHistory: []
+      committees: []
     },
     {
       id: 3,
@@ -36,8 +34,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('stasia'),
       memberSince: 2015,
       termExpires: 2020,
-      committees: [],
-      voteHistory: []
+      committees: []
     }
   ]);
   }).then(() => {
