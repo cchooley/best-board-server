@@ -15,6 +15,22 @@ exports.seed = function (knex, Promise) {
       title: null,
       createdBy: 'Stasia Vinnedge',
       image: 'https://tinyurl.com/y9c9xrm4'
+    },
+    {
+      id: 3,
+      activity: 'paid yearly dues',
+      openedOn: new Date(),
+      title: null,
+      createdBy: 'Margaret Norwood',
+      image: 'https://tinyurl.com/y9yslrys'
+    },
+    {
+      id: 4,
+      activity: 'uploaded a new file',
+      openedOn: new Date(),
+      title: null,
+      createdBy: 'Bernie Cardell',
+      image: 'https://tinyurl.com/y9n2pf8y'
     }
   ]);
   }).then(() => {
