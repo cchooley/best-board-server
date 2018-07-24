@@ -17,7 +17,7 @@ exports.seed = function (knex, Promise) {
     {
       id: 2,
       name: 'Deb Persoff',
-      email: 'mpersoff@aol.com',
+      email: 'https://tinyurl.com/yalfcd39',
       organization: 'Vintage Theatre',
       role: 'Executive Board',
       password: authUtils.hashPassword('theater'),
@@ -33,6 +33,18 @@ exports.seed = function (knex, Promise) {
       organization: 'Vintage Theatre',
       role: 'Board Member',
       password: authUtils.hashPassword('stasia'),
+      memberSince: 2015,
+      termExpires: 2020,
+      committees: []
+    },
+    {
+      id: 4,
+      name: 'Bernie Cardell',
+      image: 'https://tinyurl.com/y9n2pf8y',
+      email: 'bernster74@hotmail.com',
+      organization: 'Vintage Theatre',
+      role: 'Board Member',
+      password: authUtils.hashPassword('bernie'),
       memberSince: 2015,
       termExpires: 2020,
       committees: []
