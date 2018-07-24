@@ -28,6 +28,7 @@ exports.seed = function (knex, Promise) {
     {
       id: 3,
       name: 'Stasia Vinnedge',
+      image: 'https://tinyurl.com/y9c9xrm4',
       email: 'sscs@icloud.com',
       organization: 'Vintage Theatre',
       role: 'Board Member',
