@@ -8,6 +8,7 @@ const app = express();
 const auth = require('./routes/auth')
 const votes = require('./routes/votes')
 const users = require('./routes/users')
+const activities = require('./routes/activities')
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -22,6 +23,7 @@ app.get('/', (req, res) => {
 app.use('/users', users)
 app.use('/votes', votes)
 app.use('/auth', auth)
+app.use('/activities', activities)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

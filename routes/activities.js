@@ -1,30 +1,30 @@
 const express = require('express');
 const router = express.Router();
 
-const queries = require('../queries/votes');
+const queries = require('../queries/activities');
 
 router.get("/", (request, response, next) => {
     queries.list()
-        .then(votes => {
-            response.json({ votes });
+        .then(activities => {
+            response.json({ activities });
         })
         .catch(next);
 });
 
 router.get("/:id", (request, response, next) => {
     queries.read(request.params.id)
-        .then(vote => {
-            vote
-                ? response.json({ vote })
-                : response.status(404).json({ vote: 'Not found' })
+        .then(activity => {
+            activity
+                ? response.json({ activity })
+                : response.status(404).json({ activity: 'Not found' })
         })
         .catch(next);
 });
 
 router.post("/", (request, response, next) => {
     queries.create(request.body)
-        .then(vote => {
-            response.status(201).json({ vote });
+        .then(activity => {
+            response.status(201).json({ activity });
         })
         .catch(next);
 });
@@ -39,8 +39,8 @@ router.delete("/:id", (request, response, next) => {
 
 router.put("/:id", (request, response, next) => {
     queries.update(request.params.id, request.body)
-        .then(vote => {
-            response.json({ vote });
+        .then(activity => {
+            response.json({ activity });
         })
         .catch(next);
 });
