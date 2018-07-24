@@ -5,8 +5,8 @@ exports.seed = function (knex, Promise) {
     return knex("vote").insert([{
       id: 1,
       name: 'Buy Building',
-      openedOn: new Date(),
-      closedOn: new Date(),
+      openedOn: "07/12/2018",
+      closedOn: "08/12/2018",
       createdBy: 'Conor Hooley',
       issue: 'Should Vintage Theatre purchase its current building from the city of Aurora?',
       option1: "Yes",

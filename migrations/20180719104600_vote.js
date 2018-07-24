@@ -2,8 +2,8 @@ exports.up = function (knex, Promise) {
     return knex.schema.createTable('vote', (table) => {
         table.increments('id'),
         table.text('name'),
-        table.date('openedOn')
-        table.date('closedOn'),
+        table.string('openedOn')
+        table.string('closedOn'),
         table.text('createdBy'),
         table.text('issue'),
         table.text('option1'),
