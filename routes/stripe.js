@@ -19,20 +19,11 @@ router.post("/charge", async (req, res) => {
             description: "An example charge",
             source: req.body
         });
-
         res.json({ status });
     } catch (err) {
         res.status(500).end();
     }
 });
 
-router.post('/register', function (req, res, next) {
-    queries.create(req.body)
-        .then(user => {
-            const token = authUtils.createJWT(user)
-            res.json({ token })
-        }
-        )
-})
 
 module.exports = router;
