@@ -3,7 +3,7 @@ exports.up = function (knex, Promise) {
         table.increments('id').primary(),
         table.text('name'),
         table.string('image')
-        table.text('email'),
+        table.string('email'),
         table.text('organization'),
         table.text('role'),
         table.text('password'),
