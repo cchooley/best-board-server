@@ -9,6 +9,7 @@ const auth = require('./routes/auth')
 const votes = require('./routes/votes')
 const users = require('./routes/users')
 const activities = require('./routes/activities')
+const stripe = require('./routes/stripe')
 
 app.use(morgan('dev'));
 app.use(bodyParser.urlencoded({ extended: false }))
@@ -26,6 +27,7 @@ app.use('/users', users)
 app.use('/votes', votes)
 app.use('/auth', auth)
 app.use('/activities', activities)
+app.use('/stripe', stripe)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
