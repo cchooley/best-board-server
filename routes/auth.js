@@ -4,6 +4,12 @@ const router = express.Router()
 const queries = require('../queries/users')
 const authUtils = require('../utils/auth')
 
+router.get('/', (req, res) => {
+    res.json({
+        message: 'Auth'
+    })
+})
+
 router.post('/login', function(req, res, next) {
     queries.getUserByEmail(req.body.email)
         .then(user => {
