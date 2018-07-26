@@ -12,6 +12,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('password'),
       memberSince: 2014,
       termExpires: 2019,
+      paidDues: false,
       committees: []
     },
     {
@@ -24,6 +25,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('theater'),
       memberSince: 2015,
       termExpires: 2020,
+      paidDues: true,
       committees: []
     },
     {
@@ -36,6 +38,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('stasia'),
       memberSince: 2015,
       termExpires: 2020,
+      paidDues: false,
       committees: []
     },
     {
@@ -48,6 +51,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('bernie'),
       memberSince: 2015,
       termExpires: 2020,
+      paidDues: false,
       committees: []
     },
     {
@@ -60,6 +64,7 @@ exports.seed = function (knex, Promise) {
       password: authUtils.hashPassword('margaret'),
       memberSince: 2015,
       termExpires: 2020,
+      paidDues: true,
       committees: []
     }
   ]);

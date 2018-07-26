@@ -9,6 +9,7 @@ exports.up = function (knex, Promise) {
         table.text('password'),
         table.integer('memberSince'),
         table.integer('termExpires'),
+        table.boolean('paidDues')
         table.specificType('committees', 'text[]')
     });
 };
